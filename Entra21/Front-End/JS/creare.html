@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="texto"></div>
+
+    <button onclick="criarParagrafo()">
+        Criar parágrafo
+    </button>
+
+    <hr/>
+
+    <button onclick="criarBotao()">
+        Criar botão
+    </button>
+
+    <hr>
+
+    <button onclick="removerBotoes()">
+      Remover Botoes
+    </button>
+
+    <div id="botoes"></div>
+
+    <script>
+
+        function criarParagrafo(){
+
+            const mp = document.createElement('p')
+
+            mp.innerHTML = 'hello world'
+
+            document.getElementById('texto').appendChild(mp)
+
+        }
+
+        function criarBotao(){
+
+            const bt = document.createElement('button')
+
+            bt.innerHTML = 'Salvar'
+
+            document.getElementById('botoes').appendChild(bt)
+
+            const btinput = document.createElement('input')
+
+            btinput.setAttribute('type','button')
+
+            btinput.setAttribute('value','salvar')
+
+            btinput.style.backgroundColor = 'red'
+
+            document.getElementById('botoes').appendChild(btinput)
+
+        }
+
+        function removerBotoes(){
+
+            document.getElementById('botoes').innerHTML = ''
+
+        }
+
+    </script>
+
+</body>
+</html>

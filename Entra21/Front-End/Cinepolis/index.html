@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinema</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <h1>cinépolis</h1>
+  </div>
+
+  <nav>
+    <a href="#">Programação</a>
+    <a href="#">Bomboniére</a>
+    <a href="#">Salas</a>
+    <a href="#">Promoções</a>
+    <a href="#" class="ativo">Ingressos</a>
+  </nav>
+</header>
+
+<main class="cinema">
+
+  <h1>Escolha seus assentos</h1>
+
+  <div class="conteudo-cinema">
+
+    <!-- SALA -->
+    <div class="sala-area">
+
+      <div class="tela"></div>
+      <p class="texto-tela">TELA</p>
+
+      <div id="sala" class="sala"></div>
+
+      <div class="legenda">
+        <div>
+          <span class="box livre"></span>
+          Livre
+        </div>
+
+        <div>
+          <span class="box selecionado"></span>
+          Selecionado
+        </div>
+
+        <div>
+          <span class="box ocupado"></span>
+          Ocupado
+        </div>
+      </div>
+
+      <p class="info">
+        Assentos selecionados:
+        <span id="total">0</span>
+      </p>
+
+    </div>
+
+    <!-- FILME -->
+    <div class="filme-area">
+
+      <img
+        src="https://m.media-amazon.com/images/S/pv-target-images/9cf4d37563691d4ce4c34e866b3ff015f3a5d52dab3915e284e02fcd6dbe579d.jpg"
+        alt="Filme"
+      >
+
+      <h3>Filme em Cartaz</h3>
+
+      <p>Duração: 2h10</p>
+      <p>Gênero: Ação</p>
+
+    </div>
+
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

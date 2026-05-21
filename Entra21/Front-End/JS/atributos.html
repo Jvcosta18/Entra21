@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Interativo</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            transition: all 0.4s ease;
+            padding: 20px;
+        }
+
+        /* 🌙 Tema escuro */
+        body.dark {
+            background: #111;
+            color: #eee;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .texto {
+            color: teal;
+            font-size: 18px;
+        }
+
+        #mundoInseto {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            transition: all 0.4s ease;
+        }
+
+        body.dark #mundoInseto {
+            background: #222;
+        }
+
+        ul {
+            margin-top: 10px;
+        }
+
+        .msg {
+            margin-top: 10px;
+            padding: 5px;
+            background: lightgreen;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Painel Interativo</h2>
+
+    <!-- BOTÕES -->
+    <button onclick="atribuirCSS()">Estilizar textos</button>
+    <button onclick="esconder()">Esconder/Mostrar</button>
+    <button onclick="toggleTema()">Tema escuro</button>
+    <button onclick="resetar()">Reset</button>
+
+    <!-- CONTADOR -->
+    <button onclick="contar()">Clique aqui</button>
+    <p id="contador">Cliques: 0</p>
+
+    <!-- INPUT LISTA -->
+    <br><br>
+    <input id="itemInput" placeholder="Digite algo">
+    <button onclick="adicionarItem()">Adicionar</button>
+
+    <ul id="lista"></ul>
+
+    <!-- TEXTOS -->
+    <p>Olá Mundo</p>
+    <p>Hola Mundo</p>
+
+    <!-- DIV -->
+    <div id="mundoInseto">
+        o mundo invisivel dos insetos
+    </div>
+
+    <!-- MENSAGEM -->
+    <div id="msg"></div>
+
+    <script>
+        let clicks = 0;
+
+        // 🎨 Estilizar textos
+        function atribuirCSS() {
+            const ps = document.getElementsByTagName('p');
+
+            ps[0].classList.add('texto');
+            ps[1].style.color = 'orange';
+
+            mostrarMsg("Textos estilizados!");
+        }
+
+        // 👁️ esconder/mostrar
+        function esconder() {
+            const div = document.getElementById('mundoInseto');
+
+            if (div.style.display === 'none') {
+                div.style.display = 'block';
+                mostrarMsg("Elemento mostrado");
+            } else {
+                div.style.display = 'none';
+                mostrarMsg("Elemento escondido");
+            }
+        }
+
+        // 🌙 tema escuro
+        function toggleTema() {
+            document.body.classList.toggle('dark');
+            mostrarMsg("Tema alterado");
+        }
+
+        // 🔄 reset geral
+        function resetar() {
+            document.body.classList.remove('dark');
+
+            document.getElementById('mundoInseto').style.display = 'block';
+
+            document.getElementById('contador').innerText = "Cliques: 0";
+            clicks = 0;
+
+            document.getElementById('lista').innerHTML = "";
+
+            mostrarMsg("Reset realizado");
+        }
+
+        // 🔢 contador
+        function contar() {
+            clicks++;
+            document.getElementById('contador').innerText = "Cliques: " + clicks;
+        }
+
+        // 🗂️ adicionar lista
+        function adicionarItem() {
+            const input = document.getElementById('itemInput');
+            const lista = document.getElementById('lista');
+
+            if (input.value.trim() === "") return;
+
+            const li = document.createElement('li');
+            li.innerText = input.value;
+
+            // clicar remove item
+            li.onclick = () => li.remove();
+
+            lista.appendChild(li);
+
+            input.value = "";
+
+            mostrarMsg("Item adicionado");
+        }
+
+        // 💬 mensagens
+        function mostrarMsg(texto) {
+            const msg = document.getElementById('msg');
+
+            msg.innerText = texto;
+            msg.className = "msg";
+
+            setTimeout(() => {
+                msg.innerText = "";
+                msg.className = "";
+            }, 2000);
+        }
+    </script>
+
+</body>
+
+</html>

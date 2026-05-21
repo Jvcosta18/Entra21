@@ -1,0 +1,174 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background: #111;
+  color: white;
+}
+
+
+
+header{
+  background:#032b66;
+  padding:20px;
+}
+
+.logo{
+  text-align:center;
+  color:white;
+  margin-bottom:20px;
+}
+
+.logo h1{
+  font-size:50px;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+  padding-bottom:5px;
+}
+
+nav a:hover,
+.ativo{
+  border-bottom:2px solid white;
+}
+
+
+.cinema{
+  text-align:center;
+  margin-top:40px;
+}
+
+.conteudo-cinema{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+
+.tela{
+  width:700px;
+  max-width:90%;
+  height:80px;
+  background:white;
+  margin:auto;
+  border-radius:10px;
+}
+
+.texto-tela{
+  color: #ccc;
+}
+.sala{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.linha{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.assento{
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  background:#4caf50;
+  color:white;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  cursor:pointer;
+  transition:0.2s;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.assento:hover{
+  transform:scale(1.1);
+}
+
+.assento.selecionado{
+  background:#ffd700;
+  color:black;
+}
+
+.assento.ocupado{
+  background:#ff3b3b;
+  cursor:not-allowed;
+}
+
+
+
+.legenda{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:25px;
+  flex-wrap:wrap;
+}
+
+.legenda div{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.box{
+  width:20px;
+  height:20px;
+  border-radius:5px;
+}
+
+.livre{
+  background:#4caf50;
+}
+
+.selecionado{
+  background:#ffd700;
+}
+
+.ocupado{
+  background:#ff3b3b;
+}
+
+
+.filme-area{
+  width: 260px;
+  background: #1c1c1c;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.filme-area img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+
+.info{
+  margin-top:25px;
+  font-size:20px;
+  font-weight:bold;
+}

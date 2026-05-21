@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nome" placeholder="ex : joao" />
+    <input type="text" id="email" placeholder="joao@gmail.con">
+
+    <input type="button" value="gravar" onclick="validar()">
+
+    
+    <script>
+  
+        function validar(){
+            const inputNome = document.getElementById("nome")
+            if(inputNome.value == ''){
+                alert("o nome deve ser informado")
+                inputNome.focus()
+                return
+            }
+           
+
+              const inputEmail = document.getElementById("email")
+            if(inputEmail.value == ''){
+                alert("o email deve ser informado")
+                inputEmail.focus()
+                return
+            }
+            document.getElementsByTagName('form')[0].submit()
+        }
+    </script>
+
+    
+</body>
+</html>
